@@ -19,7 +19,7 @@ apply from: '../config/quality/quality.gradle'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.mindorks.framework.mvp"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -95,6 +95,9 @@ dependencies {
 
     // logger
     implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    // heart rate monitor library
+    implementation "com.imaginadesarrollo.universalhrm:universalhrm:1.0.0"
 
     // dependencies for local unit tests
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
