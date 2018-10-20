@@ -99,6 +99,9 @@ dependencies {
     // heart rate monitor library
     implementation "com.imaginadesarrollo.universalhrm:universalhrm:1.0.0"
 
+    // tinder state machine
+    implementation 'com.github.tinder:statemachine:0.1.2'
+
     // dependencies for local unit tests
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
     testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"

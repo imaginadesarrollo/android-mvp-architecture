@@ -16,6 +16,7 @@
 package com.mindorks.framework.mvp;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.interceptors.HttpLoggingInterceptor.Level;
@@ -44,6 +45,8 @@ public class MvpApp extends Application {
 
     private ApplicationComponent mApplicationComponent;
 
+    private Context context;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -61,6 +64,9 @@ public class MvpApp extends Application {
         }
 
         CalligraphyConfig.initDefault(mCalligraphyConfig);
+
+        // Set global context
+        context = getBaseContext();
     }
 
     public ApplicationComponent getComponent() {
@@ -71,5 +77,9 @@ public class MvpApp extends Application {
     // Needed to replace the component with a test specific one
     public void setComponent(ApplicationComponent applicationComponent) {
         mApplicationComponent = applicationComponent;
+    }
+
+    public Context getGlobalContext(){
+        return context;
     }
 }
